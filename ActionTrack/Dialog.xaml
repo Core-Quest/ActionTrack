@@ -1,0 +1,212 @@
+﻿<Window x:Class="ActionTrack.Dialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ActionTrack"
+        mc:Ignorable="d"
+        Title="Dialog" Height="550" Width="400" Background="Transparent" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="5"
+                                Padding="0" Margin="0,0,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#6d6d6e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ff4d4d" />
+                    <Setter Property="Foreground" Value="#ffffff" />
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+    </Window.Resources>
+    <Border CornerRadius="25" BorderThickness="2">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#020f1a" Offset="0"/>
+                <GradientStop x:Name="GradientBorderRHighlight" Color="#1a72ba" Offset="0.01"/>
+                <GradientStop Color="#162029" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#162029" Offset="0"/>
+                <GradientStop Color="#020f1a" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,5,10,0">
+                <Button Style="{StaticResource ControlButton}" Click="DialogExit_Click">
+                    <Image Source="/Icons/x.png" Stretch="None"/>
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel x:Name="MemberListAC_Dialog" Grid.Row="1" Grid.Column="1">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Assets/logo-2l.png" Width="100"/>
+                    <TextBlock Text="ActionTrack" FontSize="19" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Member List" FontSize="12" FontWeight="Medium" Foreground="DarkGray" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" Margin="5" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center">
+                    <StackPanel x:Name="MemberListPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                        <!-- Code Adds Here -->
+
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+
+            <StackPanel x:Name="MemberInfo_Dialog" Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <Image Source="/Assets/logo-2l.png" Width="100"/>
+                    <TextBlock Text="ActionTrack" FontSize="19" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock x:Name="MemberInfo_MemberNumTitle" Text="NUM" FontSize="12" FontWeight="Medium" Foreground="DarkGray" HorizontalAlignment="Center" Margin="0,0,5,0"/>
+                        <TextBlock Text="I" FontSize="12" FontWeight="Medium" Foreground="Gray" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="MemberInfo_MemberNameTitle" Text="MEMBERNAME" FontSize="12" FontWeight="Medium" Foreground="DarkGray" HorizontalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="Number:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_NumberText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="5,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="Name:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_NameText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="5,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="Rank:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_RankText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="5,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="BloodType:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_BTText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="5,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="DOB:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_DOBText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="5,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="EM Contact:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_EMText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="Department:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_DprtText" FontSize="11" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="200" Margin="0,5,0,0">
+                    <TextBlock Text="Status:" Foreground="White" FontSize="18"/>
+                    <TextBox x:Name="MemberInfo_StatusText" FontSize="14" Background="Transparent" Foreground="DarkGray" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="5,5,0,0" Width="200"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                    <Button Content="Remove Member" Width="120" FontSize="14" Style="{StaticResource RoundedButtonStyle}" Background="#700900" FontWeight="Medium" Height="30" Margin="5" Click="RemoveMember_Click"/>
+                    <Button Content="Update Member" Width="120" FontSize="14" Style="{StaticResource RoundedButtonStyle}" Background="#313233" FontWeight="Medium" Height="30" Margin="5" Click="UpdateMember_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="AddMember_Dialog" Grid.Row="1" Grid.Column="1" Visibility="Collapsed">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="/Assets/logo-2l.png" Width="100"/>
+                    <TextBlock Text="ActionTrack" FontSize="19" FontWeight="Medium" Foreground="White" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Add Member" FontSize="12" FontWeight="Medium" Foreground="DarkGray" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" Width="200">
+                        <TextBlock Text="Member Name" Foreground="DarkGray" FontWeight="Medium" FontSize="10"/>
+                        <TextBox x:Name="AddMember_NameInput" FontSize="12" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Icons/user.png" Stretch="None" AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" Width="200">
+                        <TextBlock Text="Member Number" Foreground="DarkGray" FontWeight="Medium" FontSize="10"/>
+                        <TextBox x:Name="AddMember_NumInput" FontSize="12" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Icons/hastag.png" Stretch="None" AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" Width="200">
+                        <TextBlock Text="Member Rank" Foreground="DarkGray" FontWeight="Medium" FontSize="10"/>
+                        <TextBox x:Name="AddMember_RankInput" FontSize="12" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Icons/ranking-stars.png" Stretch="None" AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" Width="200">
+                        <TextBlock Text="Member BloodType" Foreground="DarkGray" FontWeight="Medium" FontSize="10"/>
+                        <TextBox x:Name="AddMember_BTInput" FontSize="12" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Icons/blood-type.png" Stretch="None" AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" Width="200">
+                        <TextBlock Text="Member Date of Birth" Foreground="DarkGray" FontWeight="Medium" FontSize="10"/>
+                        <TextBox x:Name="AddMember_DOBInput" FontSize="12" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Icons/dob.png" Stretch="None" AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="0,5,0,0" Width="200">
+                        <TextBlock Text="Member EM Contact Number" Foreground="DarkGray" FontWeight="Medium" FontSize="10"/>
+                        <TextBox x:Name="AddMember_EMCInput" FontSize="12" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0,0,0,1" Height="20" VerticalAlignment="Center" Margin="0,5,0,0" Padding="20,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Icons/phone-guide.png" Stretch="None" AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel>
+                    <Button Content="Add Member" Width="100" Style="{StaticResource RoundedButtonStyle}" Background="#313233" FontWeight="Medium" Height="25" Margin="10" Click="AddMember_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+
+            <StackPanel x:Name="LoadingProgressBar" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,50" Visibility="Collapsed">
+                <TextBlock Text="Loading... Please Wait" Foreground="White" FontSize="13" FontWeight="Medium" HorizontalAlignment="Center" Margin="10"/>
+                <ProgressBar Background="#313233" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="20" IsIndeterminate="True"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="EbenUlrich@2024" Foreground="DarkGray" FontWeight="Medium" FontSize="11"/>
+            </StackPanel>
+
+        </Grid>
+
+
+
+    </Border>
+</Window>

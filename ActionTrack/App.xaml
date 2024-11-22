@@ -1,0 +1,36 @@
+﻿<Application x:Class="ActionTrack.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModal="clr-namespace:ActionTrack.MVVM.ViewModal"
+             xmlns:view="clr-namespace:ActionTrack.MVVM.View"
+             xmlns:local="clr-namespace:ActionTrack"
+             StartupUri="LoginWindow.xaml"
+             ShutdownMode="OnExplicitShutdown">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/AT_MemberButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AT_ToolBarButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AT_ACTBSeatTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AT_MaintButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AT_SettingsToggleTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModal:AccountabilityViewModal}">
+                <view:AccountablityView x:Name="AccountablityViewControl"/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModal:HomeViewModal}">
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModal:SettingsViewModal}">
+                <view:SettingsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModal:ReportWriterViewModal}">
+                <view:ReportWriterView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModal:MemberListViewModal}">
+                <view:MemberListView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

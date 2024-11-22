@@ -1,0 +1,156 @@
+﻿<Window x:Class="ActionTrack.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ActionTrack"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="600" Width="1000" Background="Transparent" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="RoundedTextBox" TargetType="TextBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Padding="5">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="RoundedPasswordBox" TargetType="PasswordBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Padding="5">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#333333"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="FontSize" Value="13"/>
+
+        </Style>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0"
+                                CornerRadius="5"
+                                Padding="0" Margin="0,0,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#6d6d6e"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ff4d4d" />
+                    <Setter Property="Foreground" Value="#ffffff" />
+                </Trigger>
+            </Style.Triggers>
+
+        </Style>
+    </Window.Resources>
+    <Border CornerRadius="25"
+
+            BorderThickness="2">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#020f1a" Offset="0"/>
+                <GradientStop x:Name="LoginGradientBorderRHighlight" Color="#1a72ba" Offset="0.01"/>
+                <GradientStop Color="#162029" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#162029" Offset="0"/>
+                <GradientStop Color="#020f1a" Offset="0.75"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition />
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0,5,10,0">
+                <Button Style="{StaticResource ControlButton}" Click="LoginExit_Click">
+                    <Image Source="/Icons/x.png" Stretch="None"/>
+                </Button>
+                
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical" Width="200">
+                    <Image Source="/Assets/logo-2l.png" Width="180"/>
+                    <TextBlock  Text="ActionTrack" FontSize="22" HorizontalAlignment="Center" FontWeight="Medium"  Foreground="White"/>
+                    <TextBlock  Text="Login" FontSize="15" HorizontalAlignment="Center" FontWeight="Medium"  Foreground="DarkGray"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0, 20, 0,0" Width="200">
+                    <TextBlock Text="Username" Foreground="DarkGray" FontSize="10" FontWeight="Medium" Margin="0, 10, 0,0"/>
+                    <TextBox x:Name="UsernameTextBox" FontSize="13" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0, 0, 0, 1" Height="28" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="20, 0,0,0">
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Icons/user.png" Stretch="None" AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="Password" Foreground="DarkGray" FontSize="10" FontWeight="Medium" Margin="0, 10, 0,0"/>
+                    <PasswordBox x:Name="PasswordTextBox" FontSize="13" Foreground="White" CaretBrush="LightGray" BorderBrush="#313233" BorderThickness="0, 0, 0, 1" Height="28" VerticalContentAlignment="Center" Margin="0,5,0,0" Padding="20, 0,0,0">
+
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="/Icons/user-key.png" Stretch="None" AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <CheckBox x:Name="LoginRememberMe" Background="White" Height="15" Foreground="White" IsChecked="False"/>
+                    <TextBlock Text="Remember Me" FontWeight="Medium" Foreground="DarkGray" Padding="5, 0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 10, 0,0" >
+                    <Button Grid.Column="1" Content="Register" Foreground="DarkGray" Background="#292a2b" Width="90" Style="{StaticResource RoundedButtonStyle}" Height="25" Margin="2"  FontWeight="Medium"/>
+                    <Button Content="Login" Background="#313233" FontWeight="Medium"  Width="90" Style="{StaticResource RoundedButtonStyle}" Height="25" Margin="2" Click="LoginButton_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 5, 0, 0">
+                    <TextBlock Text="Forgot Password?" Foreground="DarkGray" FontSize="11" FontWeight="Medium" Margin="0,0,5,0"/>
+                    <TextBlock Text="Reset" Foreground="White" FontSize="11" FontWeight="Medium"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="EbenUlrich@2024" Foreground="DarkGray" FontSize="11" FontWeight="Medium"/>
+            </StackPanel>
+
+
+
+
+
+        </Grid>
+    </Border>
+
+</Window>

@@ -1,0 +1,226 @@
+﻿<UserControl x:Class="ActionTrack.MVVM.View.AccountablityView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!-- Define the grid rows and columns -->
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" CanHorizontallyScroll="True">
+                <TextBox x:Name="ApperatusName" Text="Apperatus Name" Background="Transparent" Foreground="White" BorderThickness="0" FontSize="20" FontWeight="SemiBold" Margin="50"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="EightSeatLayout" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <!-- Top Row Seats -->
+                    <RadioButton Grid.Row="1" Grid.Column="2"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Margin="10"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="ES_1" Click="AS_Click"/>
+                    <RadioButton Grid.Row="1" Grid.Column="5"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Margin="10"
+                                 Background="#696969"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="ES_3" Click="AS_Click"/>
+                </StackPanel>
+                <StackPanel Margin="300, 0,0,0">
+                    <!-- Top Row Seats -->
+                    <RadioButton Grid.Row="1" Grid.Column="2"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 Margin="10"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="ES_2" Click="AS_Click"/>
+
+                    <RadioButton Grid.Row="1" Grid.Column="5"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 Margin="10"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="ES_4" Click="AS_Click"/>
+
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="0,30,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton Grid.Row="1" Grid.Column="2"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="0,0,5,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" x:Name="ES_5" Click="AS_Click"/>
+                <RadioButton Grid.Row="1" Grid.Column="5"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="10,0,0,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" x:Name="ES_6" Click="AS_Click"/>
+                <RadioButton Grid.Row="1" Grid.Column="5"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="10,0,00,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" x:Name="ES_7" Click="AS_Click"/>
+                <RadioButton Grid.Row="1" Grid.Column="5"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="10,0,00,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" x:Name="ES_8" Click="AS_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+        <StackPanel x:Name="SixSeatLayout" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <!-- Top Row Seats -->
+                    <RadioButton Grid.Row="1" Grid.Column="2"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Margin="10"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="SS_1" Click="AS_Click"/>
+                    <RadioButton Grid.Row="1" Grid.Column="5"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Margin="10"
+                                 Background="#696969"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="SS_3" Click="AS_Click"/>
+                </StackPanel>
+                <StackPanel Margin="300, 0,0,0">
+                    <!-- Top Row Seats -->
+                    <RadioButton Grid.Row="1" Grid.Column="2"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 Margin="10"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="SS_2" Click="AS_Click"/>
+                    <RadioButton Grid.Row="1" Grid.Column="5"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 Margin="10"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" x:Name="SS_4" Click="AS_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="0,30,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton Grid.Row="1" Grid.Column="2"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="0,0,40,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" x:Name="SS_5" Click="AS_Click"/>
+
+                <RadioButton Grid.Row="1" Grid.Column="5"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="40,0,00,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" x:Name="SS_6" Click="AS_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="FiveSeatLayout" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <!-- Top Row Seats -->
+
+                    <RadioButton Grid.Row="1" Grid.Column="5"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Margin="10"
+                                 Background="#696969"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" Click="AS_Click"/>
+                </StackPanel>
+                <StackPanel Margin="250, 0,0,0">
+                    <!-- Top Row Seats -->
+
+                    <RadioButton Grid.Row="1" Grid.Column="5"
+                                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                                 Width="60" Height="60"
+                                 Background="#696969"
+                                 Margin="10"
+                                 FontSize="14"
+                                 IsChecked="False"
+                                 Style="{StaticResource SeatButtonTheme}" Click="AS_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Margin="0,30,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton Grid.Row="1" Grid.Column="2"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="0,0,00,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" Click="AS_Click"/>
+                <RadioButton Grid.Row="1" Grid.Column="2"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="20,0,0,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" Click="AS_Click"/>
+                <RadioButton Grid.Row="1" Grid.Column="2"
+                             HorizontalAlignment="Center" VerticalAlignment="Center"
+                             Width="60" Height="60"
+                             Background="#696969"
+                             Margin="20,0,0,0"
+                             FontSize="14"
+                             IsChecked="False"
+                             Style="{StaticResource SeatButtonTheme}" Click="AS_Click"/>
+
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
